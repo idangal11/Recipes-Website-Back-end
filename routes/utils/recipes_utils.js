@@ -16,7 +16,7 @@ async function getAllRecapiesss() {
             limitLicense: true ,
             // includeNutrition: false,
             apiKey: process.env.spooncular_apiKey ,
-            number : 3
+            number : 1
         }
     });
     console.log("######### here are the recipes: ###############")
