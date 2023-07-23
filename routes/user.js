@@ -10,8 +10,13 @@ const { DateTime } = require("mssql");
  * Authenticate all incoming requests by middleware
  */
 router.use(async function (req, res, next) {
+  console.log("im hereeeeeeeeeeeeeeeeeeeeeeeeeeee")
+  console.log(req.session)
+  console.log(req.user_id)
+
   if (req.session && req.session.user_id) {
     DButils.execQuery("SELECT user_id FROM users").then((users) => {
+      console.log(req.session.user_id)
       if (users.find((x) => x.user_id === req.session.user_id)) {
         req.user_id = req.session.user_id;
         next();
@@ -26,7 +31,9 @@ router.use(async function (req, res, next) {
 /**
  * This path gets body with recipeId and save this recipe in the favorites list of the logged-in user
  */
+console.log("im here")
 router.post('/favorites', async (req,res,next) => {
+  console.log("hey im here!")
   try{
     const user_id = req.session.user_id;
     const recipe_id = req.body.recipeId;
@@ -62,6 +69,8 @@ router.get('/favorites', async (req,res,next) => {
 router.post('/last_seen', async (req, res, next) => {
   try {
     const user_id = req.session.user_id;
+    console.log("#!!!#########################################################################")
+    console.log(user_id)
     const recipe_id = req.body.recipeId;
     const timestamp = new Date().getTime(); // Get the current timestamp
     // Insert the record into the User_Recipe_History table

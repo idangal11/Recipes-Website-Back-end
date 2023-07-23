@@ -67,6 +67,8 @@ router.post("/Login", async (req, res, next) => {
 
     // Set cookie
     req.session.user_id = user.user_id;
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
+    console.log(req.session.user_id)
 
 
     // return cookie
