@@ -34,7 +34,7 @@ The backend exposes various API endpoints to cater to different frontend actions
 - `/api/user/favorites`: Manages a user's favorite recipes.
 - `/api/user/recipes`: Handles personal recipes created by users.
 - `/api/user/family-recipes`: Manages family recipes saved by users.
-- `/api/recipe/search`: Manages search for new recipes.
+- `/api/recipes/search`: Manages search for new recipes.
 
 ## Database
 
